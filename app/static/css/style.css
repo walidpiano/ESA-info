@@ -210,6 +210,10 @@ header {
     text-align: center;
 }
 
+#link-close:hover {
+    background: brown;
+}
+
 
 @media screen and (max-width: 550px) {
     #logo-image {
