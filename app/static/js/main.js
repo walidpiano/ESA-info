@@ -16,7 +16,7 @@ $(document).ready(function() {
         
 
     $('.modalDialog').click(function(){
-        window.location = '#close'
+        ShowHideMessage(false);
     })
 
 });
@@ -45,7 +45,8 @@ function GetData(studentName, esaNumber, dateOfBirth) {
                 window.location = '/instructor/' + result;
             } else {
                 console.log('false');
-                window.location = '/#openModal';
+                //window.location = '/#openModal';
+                ShowHideMessage(true);
             }
         },
         error: function(error) {
@@ -55,3 +56,10 @@ function GetData(studentName, esaNumber, dateOfBirth) {
     });
 }
 
+function ShowHideMessage(showOrHide) {
+    if (showOrHide) {
+        $('.modalDialog').addClass('to-show');
+    } else {
+        $('.modalDialog').removeClass('to-show');
+    }
+}

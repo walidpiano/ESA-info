@@ -153,12 +153,11 @@ header {
     pointer-events: none;
 }
 
-
-
-.modalDialog:target {
+.to-show {
     opacity:1;
     pointer-events: auto;
 }
+
 
 .modalDialog > div {
     width: 400px;
@@ -197,7 +196,7 @@ header {
     background: #00d9ff;
 }
 
-#link-close {
+#btn-close {
     display: block;
     margin: 10px auto 1px auto;
     border: 1px solid #606061;
@@ -210,7 +209,7 @@ header {
     text-align: center;
 }
 
-#link-close:hover {
+#btn-close:hover {
     background: brown;
 }
 
