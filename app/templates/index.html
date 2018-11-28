@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ESA Info</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="../static/css/style.css">
+
+    <script src="../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../static/js/main.js"></script>
+
+</head>
+<body>
+
+</div>
+
+
+<div id="openModal" class="modalDialog">
+	<div id="message-body">
+		<a href="#close" title="Close" class="close">X</a>
+        <h2>Invalid Login</h2>
+        <br>
+		<p>The information you entered is incorrect. Please try again!</p>
+        <a href="#close" id="link-close" title="Close" >CLOSE</a>
+	</div>
+</div>
+
+
+
+<section id="login">
+    
+    <form id="login-form">
+        <img id="logo-image" src="../static/img/esa-logo.jpg">
+        <label for="esa-number">ESA Number:</label>
+        <br>
+        <input type="text" id="esa-number" class="in-login" autofocus>
+        <br>
+        <label for="student-name">Name:</label>
+        <br>
+        <input type="text" id="student-name" class="in-login">
+        <br>
+        <label for="birth-date">Date of Birth:</label>
+        <br>
+        <input type="date" id="birth-date" class="in-login">
+        <input type="submit" id="enter" value="ENTER">
+    </form>
+</section>
+
+</body>
+</html>

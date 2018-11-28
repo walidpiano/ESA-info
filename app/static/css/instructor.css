@@ -1,0 +1,264 @@
+@font-face {
+    font-family: Poppins-Regular;
+    src: url('../fonts/Poppins-Regular.otf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Poppins-Medium;
+    src: url('../fonts/Poppins-Medium.otf');
+    font-weight: bold;
+}
+
+.label {
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    width: 100%;
+    text-align: right;
+    padding-right: 4px;
+    color: #404040;
+}
+
+#courses-table {
+    margin-bottom: 20px;
+}
+
+.input {
+    font-family: Poppins-medium;
+    font-size: 18px;
+    color: blue;
+    background: whitesmoke;
+    width: 100%;
+    padding: 4px;
+    min-height: 40px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin: 3px auto;
+}
+
+
+html {
+    background: rgba(233,232,237,0.4);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Segoe UI;
+}
+
+.ribbon {
+    background: rgba(81,74,255,0.81);
+    margin: 0 auto;
+    padding: 25px 0 8px 0;
+    border-radius: 20px 20px 0 0;
+}
+#logo {
+    margin: 0 auto;
+    max-width: 400px;
+    position: center;
+    display: block;
+}
+h1 {
+    font-family: Poppins-Medium;
+    text-align: center;
+    margin: 0 auto;
+    background: rgba(81,74,255,0.81);
+    color: white;
+    padding: 0 0 10px 0;
+}
+
+.form-container {
+    padding: 30px;
+    font-family: Segoe UI;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(233,232,237,0.4);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+    -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+    -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+    border-radius: 10px;
+    height: 100%;
+    padding: 20px 0 40px 0;
+}
+
+
+label {
+    padding: 10px;
+    display: block;
+    text-align: right;
+    width: 100%;
+}
+input, select, textarea {
+    font-weight: bold;
+    font-size: 17px;
+    padding: 10px;
+    margin: 5px;
+    display: block;
+    width: 85%;
+}
+
+.buttons {
+    margin:20px;
+}
+#cancel {
+    display: inline;
+    font-size: 19px;
+}
+#submit {
+    display: inline;
+    font-size: 19px;
+}
+
+#student-image {
+    height: 250px;
+    width: 150px;
+    border-radius: 15px;
+    margin: 0 auto 10px auto;
+    border: 2px solid gray;
+    padding: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+    -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+}
+#select-pic {
+    display: none;
+
+}
+
+footer {
+    background: rgba(81,74,255,1);
+    margin: 0 auto;
+    border-radius:0 0 10px 10px;
+    position: fixed;
+    bottom: 0;
+    width: 99%;
+    z-index: 1;
+    height: 50px;
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+}
+
+#course-header {
+    background: rgba(81,74,255,1);
+}
+
+h2 {
+    color: whitesmoke;
+}
+
+th {
+    font-size: 20px;
+}
+
+
+#birth-year, #birth-month, #birth-day {
+    display: inline;
+}
+.all-date {
+    text-align: left;
+}
+
+#my-signature {
+    margin: 10px auto 10px auto;
+    position: center;
+}
+
+#my-mail {
+    font-size: 18px;
+    color: white;
+}
+.hide {
+    display: none;
+}
+
+.modal-header {
+    background-color: #0480be;
+    color: white;
+}
+
+#android-link {
+    margin-bottom: 35px;
+    padding: 20px;
+    display: none;
+}
+
+.modal-header-fail {
+    background-color: red;
+}
+
+@media (max-width: 550px) {
+    #logo {
+        max-width: 220px;
+    }
+    h1 {
+        font-size: 22px;
+        padding: 10px 0 12px 0;
+    }
+    .form-container {
+        width: 100%;
+        border-radius: 0%;
+    }
+    label {
+        font-size: 14px;
+    }
+    td {
+        padding: 0;
+        margin: 0 auto;
+    }
+    input, select, textarea {
+        width: 90%;
+        font-size: 17px;
+        padding: 5px 3px 5px 3px;
+        margin: 5px;
+    }
+    #birth-year {
+        width: 35%;
+        display: inline;
+        padding: 5px 1px 5px 1px;
+    }
+    #birth-day {
+        width: 20%;
+        display: inline;
+        padding: 5px 1px 5px 1px;
+    }
+    footer {
+        margin: 0auto;
+        height: 40px;
+        padding: 5px 1px 7px 1px;
+    }
+    #my-signature {
+        margin: 5px auto;
+        padding: 0;
+        position: center;
+    }
+    #my-mail {
+        margin: 5px auto;
+        padding: 0;
+        position: center;
+        font-size: 17px;
+    }
+
+    .buttons {
+        margin:0 auto;
+    }
+
+}
+
+@media (max-width: 400px) {
+    h2 {
+        font-size: 17px;
+    }
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(81,74,255,0);
+    padding: 0;
+    height: 20px;
+}

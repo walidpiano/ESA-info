@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESA Registration</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+
+
+    <link href="../static/css/instructor.css" rel="stylesheet">
+    <script src="../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../static/js/instructor.js"></script>
+</head>
+<body>
+    <header>
+        <div class="ribbon">
+            <img id="logo" src="..\static\img\ESASplash.png" alt="ESA logo">
+        </div>
+        <div id="header-to-stick">
+            <h1>ESA {{ other_data }} Status</h1>
+            <h2></h2>
+        </div>
+    </header>
+
+
+    <main>
+        <div class="form-container">
+
+            <input type="image" id="student-image" src="{{ picture }}?dummy={{image_code}}">
+
+            <table>
+                <col width="25%">
+                <col width="75%">
+
+                <tr>
+                    <td>
+                        <div class="label">Name:</div>
+                    </td>
+                    <td>
+                        <div class="input">{{ instructor.name }}</div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="label">ESA Level:</div>
+                    </td>
+                    <td>
+                        <div class="input">{{ instructor.esa_level }}</div>
+                    </td>
+                </tr>
+                <br>
+
+                <tr>
+                    <td>
+                        <div class="label">Tax Code:</div>
+                    </td>
+                    <td>
+                        <div class="input">{{ instructor.tax_code }}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="label">Sex:</div>
+                    </td>
+                    <td>
+                        <div class="input">{{ instructor.sex }}</div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="label">Date of Birth:</div>
+                    </td>
+                    <td>
+                        <div class="input">{{ instructor.date_of_birth.strftime("%B %d, %Y") }}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="label">Place of Birth:</div>
+                    </td>
+                    <td>
+                        <div class="input">{{ instructor.place_of_birth }}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="label">Nationality:</div>
+                    </td>
+                    <td>
+                        <div class="input">{{ instructor.nationality }}</div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="label">Home Phone:</div>
+                    </td>
+                    <td>
+                        <div class="input">{{ instructor.home_phone }}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="label">Mobile Phone:</div>
+                    </td>
+                    <td>
+                        <div class="input">{{ instructor.cell_phone }}</div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="label">E-mail:</div>
+                    </td>
+                    <td>
+                        <div class="input">{{ instructor.email_address }}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                            <div class="label">Address:</div>
+                    </td>
+                    <td>
+                        <div class="input">
+                            {{ instructor.street }}<br>
+                            {{ instructor.city }}, {{ instructor.state_name }}<br>
+                            {{ instructor.country }}
+                        </div>
+                    </td>
+                </tr>   
+                {% if other_data == 'Professional' %}
+                <tr>
+                        <td>
+                            <div class="label">PRO Annual Renewal:</div>
+                        </td>
+                        <td>
+                            <div class="input">({{ instructor.annual_renewal }}) 
+                                {% if instructor.annual_renewal_date.strftime("%m/%d/%Y") != '01/01/1900' %}
+                                {{ instructor.annual_renewal_date.strftime("%m/%d/%Y") }} 
+                                {% endif %}
+                                - {{ instructor.prof_number }}</div>
+                        </td>
+                    </tr> 
+    
+                    <tr>
+                        <td>
+                            <div class="label">PRO Teaching Status:</div>
+                        </td>
+                        <td>
+                            <div class="input">{{ instructor.teaching_status }}</div>
+                        </td>
+                    </tr>
+                                    
+                    <tr>
+                        <td>
+                            <div class="label">FA Annual Renewal:</div>
+                        </td>
+                        <td>
+                            <div class="input">({{ instructor.first_annual_renewal }}) 
+                                {% if instructor.first_annual_renewal_date.strftime("%m/%d/%Y") != '01/01/1900' %}
+                                {{ instructor.first_annual_renewal_date.strftime("%m/%d/%Y") }} - 
+                                {% endif %}
+                                {{ instructor.fa_no }}</div>
+                        </td>
+                    </tr> 
+    
+                    <tr>
+                        <td>
+                            <div class="label">FA Teaching Status:</div>
+                        </td>
+                        <td>
+                            <div class="input">{{ instructor.fa_teaching_status }}</div>
+                        </td>
+                    </tr>
+                {% endif %}
+                    
+            </table>            
+            <br><br>
+            <div id="course-header">
+                <h2>{{ other_data }} Courses & Speciality Courses Held</h2>
+            </div>
+            <table id="courses-table">
+                <col width="50%">
+                <col width="50%">
+                <th>Course Name</th>
+                <th>Course Date</th>
+                {% for course in courses %}
+                    <tr>
+                        <td>{{ course.course_name }}</td>
+                        <td>{{ course.course_date.strftime("%m/%d/%Y") }}</td>
+                    </tr>
+                {% endfor %}
+                <td></td>
+            </table>
+        </div>
+    
+    </main>
+
+    <footer>
+        <p id="my-signature">Developed by: <a id="my-mail" href="mailto:walidpiano@yahoo.com">Walid Zakaria</a></p>
+    </footer>
+
+</body>
+</html>
+
