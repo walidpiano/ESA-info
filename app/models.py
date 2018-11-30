@@ -87,5 +87,5 @@ class InstructorCourse(db.Model):
         }
 
 
-db.drop_all()
-db.create_all()
+#db.drop_all()
+#db.create_all()

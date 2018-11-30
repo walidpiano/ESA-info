@@ -1,7 +1,7 @@
 from sqlalchemy.ext.declarative import declarative_base
 
 from app import models, db
-from sqlalchemy import or_
+from sqlalchemy import or_, and_
 
 
 class BaseStore:
@@ -65,11 +65,13 @@ class InstructorStore(BaseStore):
         return result
 
     def get_instructor(self, name, esa_number, date_of_birth):
-        # result = session.query(models.Instructor).filter_by(date_of_birth=date_of_birth)\
-        #    .filter(or_(esa_number==esa_number, name==name)).first()
-        result = self.data_provider.query.filter_by(date_of_birth=date_of_birth) \
-            .filter(or_(esa_number == esa_number, name == name)).order_by(self.data_provider.person_type).first()
+        if name:
+            result = self.data_provider.query.filter_by(name=name, date_of_birth=date_of_birth).first()
+        else:
+            result = self.data_provider.query.filter_by(esa_number=esa_number, date_of_birth=date_of_birth).first()
+
         return result
+
 
     def update(self, entity):
         fields = {
